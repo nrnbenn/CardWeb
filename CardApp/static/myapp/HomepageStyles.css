@@ -1,0 +1,18 @@
+.Main-Buttons {
+    background-color: rgb(151, 22, 22);
+    width: 300px;
+    height: 100px;
+    margin: 40px auto;
+    border-radius: 10px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+
+}
+
+.main-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 250px;
+    left: 1400px;
+}

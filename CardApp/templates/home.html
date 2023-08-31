@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <!-- establish google fonts link --> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- get Fonts--> <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'myapp/HomepageStyles.css' %}">
+<body>
+    <h1>Welcome to the Home Page</h1>
+    <div class="main-button-container">
+        <button class= "Main-Buttons" onclick="window.location.href = '{% url 'ChooseGameMode' %}';">Play!</button> <!-- Ignore Error -->
+        <button class= "Main-Buttons">Watch!</button> <!-- No page yet -->
+    </div>
+</body>
+</html>
