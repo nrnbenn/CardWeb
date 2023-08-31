@@ -1,10 +1,11 @@
 .Main-Buttons {
-    background-color: rgb(151, 22, 22);
+    background-color: rgb(22, 99, 151);
     width: 300px;
     height: 100px;
     margin: 40px auto;
     border-radius: 10px;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-family: 'Noto Serif', Arial, Helvetica, sans-serif;
+    font-weight: 700;
 
 }
 
@@ -15,4 +16,13 @@
     position: fixed;
     top: 250px;
     left: 1400px;
+}
+
+#title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+
+
+
+
 }
