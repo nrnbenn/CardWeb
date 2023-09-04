@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Single Player Or Multi Player</title>
+</head>
+<body>
+    <h1>Please Choose Your Game and your settings</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        
+        <!-- Game Search Engine-->
+        <div>
+            <input type="text" id="searchInput" placeholder="Search" autocomplete="off">
+            <div id="suggestionDropdown" class="suggestions"></div>
+        </div>
+        
+          <script>
+            const searchInput = document.getElementById('searchInput');
+            const suggestionDropdown = document.getElementById('suggestionDropdown');
+        
+            // Sample static suggestions (you can replace with dynamic data)
+            const suggestions = ['Apple', 'Banana', 'Cherry', 'Date', 'Grape', 'Lemon', 'Mango', 'Orange'];
+        
+            // Function to update the suggestion dropdown
+            function updateSuggestions() {
+              const searchText = searchInput.value.toLowerCase();
+              suggestionDropdown.innerHTML = '';
+        
+              // Filter and display suggestions that match the input
+              const matchingSuggestions = suggestions.filter(suggestion => suggestion.toLowerCase().includes(searchText));
+              matchingSuggestions.forEach(suggestion => {
+                const suggestionItem = document.createElement('div');
+                suggestionItem.className = 'suggestion-item';
+                suggestionItem.textContent = suggestion;
+        
+                // Handle click on a suggestion
+                suggestionItem.addEventListener('click', () => {
+                  searchInput.value = suggestion;
+                  suggestionDropdown.style.display = 'none';
+                });
+        
+                suggestionDropdown.appendChild(suggestionItem);
+              });
+        
+              // Display or hide the suggestion dropdown
+              suggestionDropdown.style.display = matchingSuggestions.length > 0 ? 'block' : 'none';
+            }
+        
+            // Event listener for when the input field is clicked
+            searchInput.addEventListener('click', updateSuggestions);
+          </script>
+
+    <label for="counter">Counter:</label>
+    <input type="number" id="counter" value="0" step="1" min="0">
+        </body>
+        </html>
+    
+
+</body>
+</html>

@@ -20,7 +20,7 @@ def ChoosePlayerName(request):
      else:
         return render(request, 'ChoosePlayerName.html')
      
-def ChooseMultiPlayerGame(request):
-    return render(request, 'ChooseMultiPlayerGame.html')
+def CreateGame(request):
+    return render(request, 'CreateGame.html')
     
      
