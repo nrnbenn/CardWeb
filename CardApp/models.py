@@ -3,5 +3,9 @@ from django.db import models
 # Create your models here.
 
 class Game(models.Model):
-    type = None
-    players = []
+    Type = None
+    Players = []
+    Maxplayers = 0
+    Public = None
+    Roomcode = None
+    
