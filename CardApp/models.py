@@ -7,5 +7,5 @@ class Game(models.Model):
     Players = []
     Maxplayers = 0
     Public = None
-    Roomcode = None
+    Roomcode = ""
     
