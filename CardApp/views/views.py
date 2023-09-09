@@ -18,7 +18,7 @@ def ChoosePlayerName(request):
         #Create A Session var with value: Player_Name
         request.session['Player Name'] = Player_Name
         print(request.session.get('Player Name'))
-        #Redirect to ChooseMultiPlayerGame page
+        #Redirect to ChooseMultiPlayerGame page needs to redirect to game select which redirects to game page
         return redirect(reverse('ChooseMultiPlayerGame'))
      else:
         return render(request, 'ChoosePlayerName.html')
@@ -35,13 +35,13 @@ def CreateGame(request):
         RoomCode = ''.join(random.choice(Characters) for _ in range(5))
       if Visibility == False:
         RoomCode = request.POST.get('Room-Code')
+
       
-      NewGame = models.Game(Type=GameType, MaxPlayers = PlayerNumber, Public = Visibility, Roomcode= RoomCode)
-
+      NewGame = models.Game(Type=GameType, MaxPlayers = PlayerNumber, Public = Visibility, Roomcode= RoomCode,)
       NewGame.Save()
-        
-
+      return redirect(request, 'ChosePlayerName')
   
-    return render(request, 'CreateGame.html')
+    else:   
+      return render(request, 'CreateGame.html')
     
      
