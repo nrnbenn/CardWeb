@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.db import models
 import random
 import string
+from models import Game
 
 def home(request):
     return render(request, 'home.html')
@@ -37,9 +38,9 @@ def CreateGame(request):
         RoomCode = request.POST.get('Room-Code')
 
       
-      NewGame = models.Game(Type=GameType, MaxPlayers = PlayerNumber, Public = Visibility, Roomcode= RoomCode,)
+      NewGame = Game(Type=GameType, MaxPlayers = PlayerNumber, Public = Visibility, Roomcode= RoomCode,)
       NewGame.Save()
-      return redirect(request, 'ChosePlayerName')
+      return redirect(request, 'ChoosePlayerName')
   
     else:   
       return render(request, 'CreateGame.html')
