@@ -3,17 +3,6 @@
 <head>
     <title>Single Player Or Multi Player</title>
 
-  <style>
-        #text-input {
-      display: none;
-    }
-
-    #show-text:checked + #text-input {
-      display: block;
-    }
-
-    
-  </style>
 </head>
 <body>
     <h1>Please Choose Your Game and your settings</h1>
@@ -66,12 +55,12 @@
     <label for="counter">Player number:</label>
     <input type="number" id="counter" value="0" step="1" min="0" name="Players">
 
-    <!-- public/private game and room code inputs --> 
    
-    <label>
-       <input type="checkbox" id="show-text" name="Visibility"> Public Game  
+   
+    
+    <input type="checkbox" id="show-text" name="Visibility"> Public Game  
         
-    </label>
+    
     <input type="text" id="text-input" placeholder="Enter Room Code" name="Room-Code">
 
 

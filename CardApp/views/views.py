@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.db import models
 import random
 import string
-from models import Game
+from CardApp.models import Game
 
 def home(request):
     return render(request, 'home.html')
@@ -33,12 +33,12 @@ def CreateGame(request):
       if Visibility == True:
         #generate random room code
         Characters = string.ascii_letters + string.digits
-        RoomCode = ''.join(random.choice(Characters) for _ in range(5))
+        Roomcode = ''.join(random.choice(Characters) for _ in range(5))
       if Visibility == False:
-        RoomCode = request.POST.get('Room-Code')
+        Roomcode = request.POST.get('Room-Code')
 
       
-      NewGame = Game(Type=GameType, MaxPlayers = PlayerNumber, Public = Visibility, Roomcode= RoomCode,)
+      NewGame = Game(Type=GameType, MaxPlayers = PlayerNumber, Public = Visibility, Roomcode= Roomcode,)
       NewGame.Save()
       return redirect(request, 'ChoosePlayerName')
   
